@@ -1,19 +1,16 @@
-class Umbrella {
-  constructor(x, y, radius) {
-      var options = {
-          isStatic: true
-      }
-      this.radius = radius;
-      this.body = Bodies.circle(x, y, radius, options);
-      this.image = loadImage("umbrella.png");
-      World.add(world, this.body);
-  }
-  display() {
-      push();
-      translate(this.body.position.x, this.body.position.y);
-      imageMode(CENTER);
-      image(this.image, 0, 0, this.radius, this.radius);
-      this.visiblity = 0;
-      pop();
-  }
+class Umbrella{
+    constructor(x,y){
+        var options={
+            isStatic: true
+        }
+        this.image = loadImage("images/walking_1.png");
+        this.radius = 50;
+        this.umbrella = Bodies.circle(x,y,50,options);
+        World.add(world,this.umbrella);
+    }
+
+    display(){
+        imageMode(CENTER);
+        image(this.image, this.umbrella.position.x, this.umbrella.position.y + 70,300,300);
+    }
 }
